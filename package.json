@@ -1,0 +1,6 @@
+{
+  "name": "ruuvit-to-cosmos",
+  "version": "1.0.0",
+  "description": "RuuviTag data from IotHub to CosmosDB",
+  "devDependencies": {}
+}
