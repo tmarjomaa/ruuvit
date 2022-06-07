@@ -7,6 +7,15 @@ module.exports = function (context, IoTHubMessages) {
     var humidity = 0.0;
     var mac = "";
     var eventDate = new Date();
+    var location = "";
+    
+    const locationTable = {
+        "f39a99eac7c2": "olohuone",
+        "c383afc5299b": "terassi",
+        "d50a0961daa6": "makuuhuone",
+        "cdf431cfc39d": "kellari"
+    };
+
 
     IoTHubMessages.forEach(message => {
         context.log(`Processed message: ${message}`);
@@ -15,6 +24,7 @@ module.exports = function (context, IoTHubMessages) {
         pressure = message.pressure;
         humidity = message.humidity;
         mac = message.mac;
+        location = (mac) => locationTable[mac];
         eventdate = eventDate.toISOString();
     });
 
