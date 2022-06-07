@@ -16,7 +16,6 @@ module.exports = function (context, IoTHubMessages) {
         "cdf431cfc39d": "kellari"
     };
 
-
     IoTHubMessages.forEach(message => {
         context.log(`Processed message: ${message}`);
         battery = message.battery;
@@ -31,6 +30,7 @@ module.exports = function (context, IoTHubMessages) {
     var output = {
         "eventDate": eventdate,
         "mac": mac,
+        "location": location,
         "temperature": temperature,
         "humidity": humidity,
         "pressure": pressure,
