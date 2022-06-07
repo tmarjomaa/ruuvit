@@ -17,13 +17,14 @@ module.exports = function (context, IoTHubMessages) {
     };
 
     IoTHubMessages.forEach(message => {
-        context.log(`Processed message: ${message}`);
+        context.log(`Processed message: ${JSON.stringify(message)}`);
         battery = message.battery;
         temperature = message.temperature;
         pressure = message.pressure;
         humidity = message.humidity;
         mac = message.mac;
         location = (mac) => locationTable[mac];
+        context.log(`location lookup: ${JSON.stringify(location)}`);
         eventdate = eventDate.toISOString();
     });
 
