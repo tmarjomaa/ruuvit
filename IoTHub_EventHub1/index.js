@@ -1,5 +1,5 @@
 module.exports = function (context, IoTHubMessages) {
-    context.log(`JavaScript eventhub trigger function called for message array: ${IoTHubMessages}`);
+    context.log(`JavaScript eventhub trigger function called for message array: ${JSON.stringify(IoTHubMessages)}`);
 
     var battery = 0;
     var temperature = 0.0;
@@ -37,7 +37,7 @@ module.exports = function (context, IoTHubMessages) {
         "battery": battery
     };
 
-    context.log(`Output content: ${output}`);
+    context.log(`Output content: ${JSON.stringify(output)}`);
 
     context.bindings.outputDocument = output;
 
