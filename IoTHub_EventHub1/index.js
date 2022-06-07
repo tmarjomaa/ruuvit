@@ -9,12 +9,14 @@ module.exports = function (context, IoTHubMessages) {
     var eventDate = new Date();
     var location = "missing";
     
-    const locationTable = {
+    const ruuviLocationTable = {
         "f39a99eac7c2": "olohuone",
         "c383afc5299b": "terassi",
         "d50a0961daa6": "makuuhuone",
         "cdf431cfc39d": "kellari"
     };
+    
+    const ruuviLocation = (mac) => ruuviLocationTable[mac] || "missing";
 
     IoTHubMessages.forEach(message => {
         context.log(`Processed message: ${JSON.stringify(message)}`);
@@ -23,8 +25,8 @@ module.exports = function (context, IoTHubMessages) {
         pressure = message.pressure;
         humidity = message.humidity;
         mac = message.mac;
-        location = (mac) => locationTable[mac];
-        context.log(`location lookup: ${JSON.stringify(mac)}`);
+        location = ruuviLocation(message.mac);
+        context.log(`location lookup: ${JSON.stringify(location)}`);
         eventdate = eventDate.toISOString();
     });
 
