@@ -23,7 +23,7 @@ module.exports = function (context, IoTHubMessages) {
         pressure = message.pressure;
         humidity = message.humidity;
         mac = message.mac;
-        location = (mac) => locationTable[mac.toString()];
+        location = (mac.toString()) => locationTable[mac.toString()] || "missing";
         context.log(`location lookup: ${JSON.stringify(location)}`);
         eventdate = eventDate.toISOString();
     });
