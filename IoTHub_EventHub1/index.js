@@ -7,7 +7,6 @@ module.exports = function (context, IoTHubMessages) {
     var humidity = 0.0;
     var mac = "";
     var eventDate = new Date();
-    var location = "";
     
     const locationTable = {
         "f39a99eac7c2": "olohuone",
@@ -23,7 +22,7 @@ module.exports = function (context, IoTHubMessages) {
         pressure = message.pressure;
         humidity = message.humidity;
         mac = message.mac;
-        location = (mac) => locationTable[mac];
+        const location = (mac) => locationTable[mac] || "missing";
         context.log(`location lookup: ${JSON.stringify(location)}`);
         eventdate = eventDate.toISOString();
     });
