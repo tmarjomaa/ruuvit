@@ -10,8 +10,8 @@ module.exports = function (context, IoTHubMessages) {
     var location = "missing";
     
     const ruuviLocationTable = {
-        "f39a99eac7c2": "olohuone",
-        "c383afc5299b": "terassi",
+        "f39a99eac7c2": "terassi",
+        "c383afc5299b": "olohuone",
         "d50a0961daa6": "makuuhuone",
         "cdf431cfc39d": "kellari"
     };
