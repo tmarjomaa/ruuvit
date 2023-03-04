@@ -12,7 +12,7 @@ module.exports = function (context, IoTHubMessages) {
     const ruuviLocationTable = {
         "f39a99eac7c2": "terassi",
         "c383afc5299b": "olohuone",
-        "d50a0961daa6": "makuuhuone",
+        "d17ce99cd44e": "makuuhuone",
         "cdf431cfc39d": "kellari"
     };
     
