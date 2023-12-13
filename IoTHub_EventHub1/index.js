@@ -13,7 +13,9 @@ module.exports = function (context, IoTHubMessages) {
         "f39a99eac7c2": "terassi",
         "c383afc5299b": "olohuone",
         "d17ce99cd44e": "makuuhuone",
-        "cdf431cfc39d": "kellari"
+        "cdf431cfc39d": "kellari",
+        "e2511609b6ec": "autotalli",
+        "cc92886665d4": "kylpyhuone"
     };
     
     const ruuviLocation = (mac) => ruuviLocationTable[mac] || "missing";
