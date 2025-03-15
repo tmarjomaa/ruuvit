@@ -5,7 +5,7 @@
       "name": "IoTHubMessages",
       "direction": "in",
       "eventHubName": "samples-workitems",
-      "connection": "rpiruuvidemo_events_IOTHUB",
+      "connection": "IOTHUB_CONNECTION_STRING",
       "cardinality": "many",
       "consumerGroup": "$Default"
     },
@@ -13,10 +13,10 @@
       "name": "outputDocument",
       "direction": "out",
       "type": "cosmosDB",
-      "databaseName": "outDatabase",
-      "collectionName": "MyCollection",
+      "databaseName": "measurementdb",
+      "collectionName": "measurementdata",
       "createIfNotExists": true,
-      "connectionStringSetting": "cosmos-ruuvi-test_DOCUMENTDB"
+      "connectionStringSetting": "COSMOSDB_CONNECTION_STRING"
     }
   ]
 }
